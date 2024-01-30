@@ -4,6 +4,8 @@
 #include <chrono>
 #include <thread>
 
+#include "crossplatforming.h"
+
 #include "map.h"
 #include "controller.h"
 #include "snake.h"
@@ -75,9 +77,11 @@ void statusBar() {
 }
 
 void result() {
+    system("clear");
     std::cout << std::endl;
     std::cout << "Game over!" << std::endl;
     std::cout << "Scores: " << snake.getScores() << std::endl;
+    std::cout << std::endl;
 }
 
 void mainLoop() {
@@ -93,7 +97,7 @@ void mainLoop() {
         if (!renderSnake()) break;      
         map.render();
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
     }    
 }
 
