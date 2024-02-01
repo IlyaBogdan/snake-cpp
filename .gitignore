@@ -1,3 +1,5 @@
 .vscode
 *.exe
 main
+main.o
+SFML*

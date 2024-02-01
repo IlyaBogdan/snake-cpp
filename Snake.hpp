@@ -1,4 +1,4 @@
-class Snake {
+class Snake : Renderer {
     public:
         Snake() {}
         Snake(int maxSize) {
@@ -10,7 +10,6 @@ class Snake {
 
             return snake;
         }
-
         Snake move() {
 
             for (int i = this->endOfBody() - 1; i > 0; i--) {
@@ -68,11 +67,9 @@ class Snake {
         int stepUp = 1;
 
         int* createBody(int maxSize) {
-            int *body = new int[maxSize];
+            int *body = new int[maxSize]();
 
-            for (int i = 0; i < maxSize; i++) {
-                body[i] = 0;
-            }
+            
             body[0] = maxSize / 2;
 
             return body;

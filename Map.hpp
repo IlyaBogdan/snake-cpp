@@ -1,4 +1,4 @@
-class Map {
+class Map : public Renderer {
     public:
         Map() {}
         Map(int width, int height) {
@@ -7,6 +7,7 @@ class Map {
 
             this->mapPtr = this->createMap();
         }
+
 
         static Map init(int width, int height) {
             Map map = Map(width, height);
@@ -22,32 +23,36 @@ class Map {
             }
         }
 
-        void render() {
+        Drawable* render() {
 
-            const int mapSize = this->width * this->height;
+            // const int mapSize = this->width * this->height;
 
-            for (int i = 0; i < this->width * this->height; i++) {
+            // for (int i = 0; i < this->width * this->height; i++) {
 
-                switch (mapPtr[i]) {
-                    case -1:
-                        std::cout << '#'; break;
-                    case 0:
-                        std::cout << '.'; break;
-                    case 1:
-                        std::cout << 'O'; break;
-                    case 3:
-                        std::cout << '@'; break;
-                    case 2:
-                        std::cout << '$'; break;
+            //     switch (mapPtr[i]) {
+            //         case -1:
+            //             std::cout << '#'; break;
+            //         case 0:
+            //             std::cout << '.'; break;
+            //         case 1:
+            //             std::cout << 'O'; break;
+            //         case 3:
+            //             std::cout << '@'; break;
+            //         case 2:
+            //             std::cout << '$'; break;
                     
-                    default:
-                        break;
-                }
+            //         default:
+            //             break;
+            //     }
 
-                if (i % this->width == this->width - 1) std::cout << std::endl;
-            }
+            //     if (i % this->width == this->width - 1) std::cout << std::endl;
+            // }
 
-            std::cout << std::endl;
+            // std::cout << std::endl;
+
+            CircleShape shape(100.f);
+
+            return &shape;
         }
 
         bool takePosition(int positionIndex, int renderElementCode, bool importantMode=false) {

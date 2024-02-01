@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <time.h>
 
-class Food {
+class Food : Renderer {
 
     public:
         Food() {}

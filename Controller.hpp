@@ -5,7 +5,6 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 
-
 class Controller {
     public:
         Controller() {}
@@ -37,7 +36,6 @@ class Controller {
                     case 119:
                         return 4;
 
-                    
                     
                     default:
                         return 1;
